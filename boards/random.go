@@ -1,5 +1,10 @@
 package boards
 
+import (
+	"math/rand"
+	"time"
+)
+
 //Random values board
 type Board struct {
 	MaxX int
@@ -8,7 +13,6 @@ type Board struct {
 
 //New random board
 func New() Board {
-	// rand.Seed(10)
-	// return Board{rand.Intn(10), rand.Intn(10)}
-	return Board{3, 3}
+	rand.Seed(time.Now().UnixNano())
+	return Board{rand.Intn(10), rand.Intn(10)}
 }
